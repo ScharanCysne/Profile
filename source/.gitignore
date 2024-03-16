@@ -1,5 +1,5 @@
-bin/
-lib/
+../bin/
+../lib/
 
 # Byte-compiled / optimized / DLL files
 backend/__pycache__/
