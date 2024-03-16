@@ -11,11 +11,11 @@ function App() {
     <Container className="App" style={{margin: "5%"}}>
       <Header/>
       <Row>
-        <Col>
-          <Curriculum/>
+        <Col style={{marginTop: "5%"}}>
+          <Chat />
         </Col>
         <Col>
-          <Chat/>
+          <Curriculum/>
         </Col>
       </Row>
     </Container>
