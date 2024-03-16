@@ -1,9 +1,7 @@
 import Chat from "./component/chat";
 import Curriculum from "./component/curriculum";
 
-import Container from 'react-bootstrap/Container';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
+import { Row, Col, Container } from "reactstrap";
 import Header from "./component/header";
 
 function App() {
