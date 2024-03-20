@@ -4,8 +4,22 @@ from django.http import JsonResponse
 from django.contrib import auth
 from django.contrib.auth.models import User
 from django.utils import timezone
+from rest_framework import viewsets
 
 from .models import Message
+from .serializers import MessageSerializer
+
+
+class MessageViewSet(viewsets.ModelViewSet):
+    serializer_class = MessageSerializer
+
+    def get_queryset(self, session: str = None):
+        # filter queryset based on logged in user
+        return Message.objects.filter(session_id=session)
+
+    def perform_create(self, serializer):
+        # ensure current user is correctly populated on new objects
+        serializer.save(session_id=self.request.session)
 
 
 # Create your views here.

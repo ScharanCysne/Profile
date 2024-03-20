@@ -1,6 +1,19 @@
 import React, { Component } from "react";
+import Paper from '@mui/material/Paper';
+import { styled } from '@mui/material/styles';
+import './curriculum.css'; // Tell webpack that Button.js uses these styles
 
-class Curriculum extends Component {
+
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: 'lightgray',
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: 'left',
+  color: theme.palette.text.secondary,
+  marginBottom: '1em'
+}));
+
+class CurriculumItem extends Component {
     constructor(props) {
       super(props);
       this.state = {};
@@ -8,9 +21,22 @@ class Curriculum extends Component {
 
     render() {
         return (
-          <p>Stand by</p>
+          <div>
+            <Item id="item_1">
+              <h3>Curriculum Item</h3>
+              <p>Standy by</p>
+            </Item>
+            <Item id="item_1">
+              <h3>Curriculum Item</h3>
+              <p>Standy by</p>
+            </Item>
+            <Item id="item_1">
+              <h3>Curriculum Item</h3>
+              <p>Standy by</p>
+            </Item>
+          </div>
         );
     }
 }
 
-export default Curriculum
+export default CurriculumItem

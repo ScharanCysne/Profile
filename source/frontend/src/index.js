@@ -1,14 +1,23 @@
-//import './index.css';
+import './index.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import App from './App';
+
+function getStyle(){
+  if (screen.height / screen.width >= 982 / 1512)
+    return {display: 'block', marginLeft: 'auto', marginRight: 'auto', width: '100%'}
+  else
+    return {display: 'block', marginLeft: 'auto', marginRight: 'auto', width: '90%'}
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <div></div>
+    <img src={'../static/cover.jpeg'} alt="Logo" style={getStyle()}/>;
     <App />
   </React.StrictMode>
 );

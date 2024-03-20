@@ -3,9 +3,7 @@ from .models import Message
 
 
 class MessageAdmin(admin.ModelAdmin):
-    list_display = ("sender", "body")
+    list_display = ("session_id", "user", "message", "created_at")
 
-
-# Register your models here.
 
 admin.site.register(Message, MessageAdmin)
