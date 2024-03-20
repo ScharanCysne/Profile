@@ -1,3 +1,12 @@
+#item_1 {
+    height: 100px;
+    width: 100%;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+}
+
+
 #item_1:hover {
-    background-color:red;
+    height: 200px;
 }
