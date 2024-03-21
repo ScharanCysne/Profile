@@ -16,8 +16,7 @@ function getStyle(){
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <div></div>
-    <img src={'../static/cover.jpeg'} alt="Logo" style={getStyle()}/>;
+    <img src={'../static/images/cover.jpeg'} alt="Logo" style={getStyle()}/>;
     <App />
   </React.StrictMode>
 );

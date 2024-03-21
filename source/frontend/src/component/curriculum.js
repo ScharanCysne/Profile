@@ -1,15 +1,18 @@
+import './curriculum.css';
+
 import React, { Component } from "react";
+
+import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import { styled } from '@mui/material/styles';
-import './curriculum.css';
 
 
 const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: 'white',
+  backgroundColor: '#111317',
   padding: theme.spacing(1),
   textAlign: 'left',
-  color: theme.palette.text.secondary,
-  marginBottom: '1em'
+  marginBottom: '1em',
+  ...theme.typography.body2,
 }));
 
 
@@ -22,18 +25,40 @@ class Curriculum extends Component {
   render() {
       return (
         <div>
-          <Item id="item_1">
-            <h3>Education</h3>
-            <p>Standy by</p>
-          </Item>
-          <Item id="item_1">
-            <h3>Experience</h3>
-            <p>Standy by</p>
-          </Item>
-          <Item id="item_1">
-            <h3>Personal Projects</h3>
-            <p>Standy by</p>
-          </Item>
+          <Grid container spacing={2}>
+            <Grid item xs={6}>
+              <Item elevation={10} id="item_1">
+                <div style={{color: 'white'}}>
+                <h3>Education</h3>
+                <p>Standy by</p>
+                </div>
+              </Item>
+            </Grid>
+            <Grid item xs={6}>
+              <Item elevation={10} id="item_2">
+                <div style={{color: 'white'}}>
+                <h3>Experience</h3>
+                <p>Standy by</p>
+                </div>
+              </Item>
+            </Grid>
+            <Grid item xs={6}>
+              <Item elevation={10} id="item_3">
+                <div style={{color: 'white'}}>
+                  <h3>Personal Projects</h3>
+                  <p>Standy by</p>
+                </div>
+              </Item>
+            </Grid>
+            <Grid item xs={6}>
+              <Item elevation={10} id="item_4">
+                <div style={{color: 'white'}}>
+                <h3>Skillset</h3>
+                <p>Standy by</p>
+                </div>
+              </Item>
+            </Grid>
+          </Grid>
         </div>
       );
   }

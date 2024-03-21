@@ -1,12 +1,19 @@
-#item_1 {
+#item_1,
+#item_2,
+#item_3,
+#item_4 {
     height: 100px;
-    width: 100%;
+    width: 90%;
     -webkit-transition: all .5s;
     -moz-transition: all .5s;
     transition: all .5s;
 }
 
-
-#item_1:hover {
+#item_1:hover,
+#item_2:hover,
+#item_3:hover,
+#item_4:hover {
     height: 200px;
+    border: solid #FFA800;
+    /* background-color: whitesmoke; */
 }

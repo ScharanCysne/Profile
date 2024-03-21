@@ -1,11 +1,24 @@
 import './App.css'
 
+import Avatar from '@mui/material/Avatar';
 import Divider from '@mui/material/Divider';
 import Curriculum from './component/curriculum';
+import FloatingButton from './component/FloatingButton';
 
 const SubHeader = () => {
   return (
     <div>
+      <Avatar
+        alt="Nicholas Scharan Cysne"
+        src="/static/images/avatar.jpg"
+        style={{
+          display: 'block',
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          width: '10em',
+          height: '10em'
+        }}
+      />
       <h1
         style={{
           color: 'white',
@@ -28,8 +41,8 @@ const SubHeader = () => {
       >
         <i>
           "My goal is to develop the tools, systems, and processes that enable
-          artificial intelligence to be applied in the real world, thus
-          generating tangible and positive impact."
+          artificial intelligence to be applied to the most complex problems in today's
+          society, thereby generating tangible and positive impact in the world."
         </i>
       </h3>
     </div>
@@ -43,6 +56,7 @@ function App() {
       <p style={{textAlign: 'center'}}><i class="arrow down"></i></p>
       <SubHeader/>
       <Curriculum/>
+      <FloatingButton/>
     </div>
   )
 }
