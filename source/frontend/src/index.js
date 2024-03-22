@@ -20,30 +20,20 @@ root.render(
     <img src={'../static/images/cover.jpeg'} alt="Logo" style={getStyle()}/>;
     <img src={'../static/images/work.jpg'} alt="Logo" style={{
       ...getStyle(),
-      width: window.screen.width,
       position: 'absolute',
       top: '150%',
       left: '0'
     }}/>;
-    <img src={'../static/images/education.jpg'} alt="Logo" style={{
+    <img src={'../static/images/projects.jpg'} alt="Logo" style={{
       ...getStyle(),
-      width: window.screen.width,
       position: 'absolute',
       top: '250%',
       left: '0'
     }}/>;
-    <img src={'../static/images/projects.jpg'} alt="Logo" style={{
-      ...getStyle(),
-      width: window.screen.width,
-      position: 'absolute',
-      top: '350%',
-      left: '0'
-    }}/>;
     <img src={'../static/images/skillset.jpg'} alt="Logo" style={{
       ...getStyle(),
-      width: window.screen.width,
       position: 'absolute',
-      top: '450%',
+      top: '350%',
       left: '0'
     }}/>;
     <App />

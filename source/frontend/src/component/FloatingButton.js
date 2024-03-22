@@ -8,11 +8,19 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
 
+export const openInNewTab = (url) => {
+    console.log(url)
+    const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
+    if (newWindow) newWindow.opener = null
+  }
+
+export const onClickUrl = (url) => openInNewTab(url);
+
 const actions = [
-  { icon: <FileCopyIcon />, name: 'Resume' },
-  { icon: <GitHubIcon />, name: 'Github' },
-  { icon: <LinkedInIcon />, name: 'LinkedIn' },
-  { icon: <EmailIcon />, name: 'Email' },
+  { icon: <FileCopyIcon />, name: 'Resume', url: 'http://127.0.0.1:8000/' },
+  { icon: <GitHubIcon />, name: 'Github', url: 'https://github.com/ScharanCysne' },
+  { icon: <LinkedInIcon />, name: 'LinkedIn', url: 'https://www.linkedin.com/in/scharan-cysne/' },
+  { icon: <EmailIcon />, name: 'Email', url: 'mailto:nicholas.s.cysne@gmail.com' },
 ];
 
 export default function FloatingButton() {
@@ -28,9 +36,13 @@ export default function FloatingButton() {
         >
             {actions.map((action) => (
                 <SpeedDialAction
-                key={action.name}
-                icon={action.icon}
-                tooltipTitle={action.name}
+                    key={action.name}
+                    icon={action.icon}
+                    tooltipTitle={action.name}
+                    onClick={e => {
+                        e.stopPropagation();
+                        onClickUrl(action.url);
+                      }}
                 />
             ))}
         </SpeedDial>

@@ -1,7 +1,7 @@
-#item_1,
-#item_2,
-#item_3,
-#item_4 {
+#proj_1,
+#proj_2,
+#proj_3,
+#proj_4 {
     height: 100px;
     width: 90%;
     -webkit-transition: all .5s;
@@ -9,10 +9,10 @@
     transition: all .5s;
 }
 
-#item_1:hover,
-#item_2:hover,
-#item_3:hover,
-#item_4:hover {
+#proj_1:hover,
+#proj_2:hover,
+#proj_3:hover,
+#proj_4:hover {
     height: 250px;
     border: solid #FFA800;
     /* background-color: whitesmoke; */
