@@ -1,4 +1,4 @@
-import './curriculum.css';
+import './education.css';
 
 import React, { Component } from "react";
 
@@ -30,7 +30,7 @@ function avatarSelector(type){
   )
 }
 
-class Curriculum extends Component {
+class Education extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -39,10 +39,7 @@ class Curriculum extends Component {
   render() {
       return (
         <div>
-          <Grid container spacing={0} style={{position: 'absolute', top: '160%', right: '2em'}}>
-            <Grid item xs={6}>
-              {/* Work Experience */}
-            </Grid>
+          <Grid container spacing={0} style={{position: 'absolute', top: '260%', left: '4em'}}>
             <Grid item xs={6}>
               <div style={{color: 'white', fontFamily: 'avenir', textAlign: 'left'}}>
                 <h2>
@@ -90,11 +87,28 @@ class Curriculum extends Component {
                   </Grid>
                 </Grid>
               </Item>
+              <Item elevation={10} id="item_4">
+                <Grid container spacing={2}>
+                  <Grid item xs={2}>
+                    {avatarSelector("rag")}
+                  </Grid>
+                  <Grid item xs={10}>
+                    <div style={{color: 'white', fontFamily: 'avenir'}}>
+                      <h2>Generative AI | Multimodal RAGs</h2>
+                      <p>To be added</p>
+                    </div>
+                  </Grid>
+                </Grid>
+              </Item>
             </Grid>
+            <Grid item xs={6}>
+              {/* Education & Research */}
+            </Grid>
+
           </Grid>
         </div>
       );
   }
 }
 
-export default Curriculum
+export default Education

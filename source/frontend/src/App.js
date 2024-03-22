@@ -5,6 +5,7 @@ import Divider from '@mui/material/Divider';
 import Curriculum from './component/curriculum';
 import FloatingButton from './component/FloatingButton';
 import ContactInformation from './component/contact';
+import Education from './component/education';
 
 const SubHeader = () => {
   return (
@@ -57,6 +58,7 @@ function App() {
       <p style={{textAlign: 'center'}}><i class="arrow down"></i></p>
       <SubHeader/>
       <Curriculum/>
+      <Education/>
       <FloatingButton/>
     </div>
   )
