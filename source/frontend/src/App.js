@@ -4,6 +4,7 @@ import Avatar from '@mui/material/Avatar';
 import Divider from '@mui/material/Divider';
 import Curriculum from './component/curriculum';
 import FloatingButton from './component/FloatingButton';
+import ContactInformation from './component/contact';
 
 const SubHeader = () => {
   return (

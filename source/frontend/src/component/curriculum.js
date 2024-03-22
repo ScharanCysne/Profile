@@ -2,10 +2,10 @@ import './curriculum.css';
 
 import React, { Component } from "react";
 
+import { Avatar } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import { styled } from '@mui/material/styles';
-
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: '#111317',
@@ -15,6 +15,20 @@ const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
 }));
 
+function avatarSelector(type){
+  return (
+    <Avatar
+      alt="boat"
+      src={`/static/images/${type}.jpg`}
+      style={{
+        display: 'block',
+        margin: 'auto',
+        width: '5em',
+        height: '5em',
+      }}
+    />
+  )
+}
 
 class Curriculum extends Component {
   constructor(props) {
@@ -25,37 +39,53 @@ class Curriculum extends Component {
   render() {
       return (
         <div>
-          <Grid container spacing={2}>
+          <Grid container spacing={0} style={{position: 'absolute', top: '170%', right: '2em'}}>
             <Grid item xs={6}>
-              <Item elevation={10} id="item_1">
-                <div style={{color: 'white'}}>
-                <h3>Education</h3>
-                <p>Standy by</p>
-                </div>
-              </Item>
+              {/* Work Experience */}
             </Grid>
             <Grid item xs={6}>
+              <h2 style={{color: 'white', fontFamily: 'avenir'}}>
+                <text style={{backgroundColor: '#FFA800'}}>Software Engineer</text>
+                <text> @ QuantumBlack, AI by McKinsey</text>
+              </h2>
               <Item elevation={10} id="item_2">
-                <div style={{color: 'white'}}>
-                <h3>Experience</h3>
-                <p>Standy by</p>
-                </div>
+                <Grid container spacing={2}>
+                  <Grid item xs={2}>
+                    {avatarSelector("boat")}
+                  </Grid>
+                  <Grid item xs={10}>
+                    <div style={{color: 'white', fontFamily: 'avenir'}}>
+                      <h2>Digital Twin | Offshore Shipbuilding Optimizer</h2>
+                      <p>Mantém título, tudo alinhado no centro verticalmente, sobe texto qndo mouse hover</p>
+                    </div>
+                  </Grid>
+                </Grid>
               </Item>
-            </Grid>
-            <Grid item xs={6}>
               <Item elevation={10} id="item_3">
-                <div style={{color: 'white'}}>
-                  <h3>Personal Projects</h3>
-                  <p>Standy by</p>
-                </div>
+                <Grid container spacing={2}>
+                  <Grid item xs={2}>
+                    {avatarSelector("intelligence")}
+                  </Grid>
+                  <Grid item xs={10}>
+                    <div style={{color: 'white', fontFamily: 'avenir'}}>
+                      <h2>Generative AI | Autonomous Agents</h2>
+                      <p>To be added</p>
+                    </div>
+                  </Grid>
+                </Grid>
               </Item>
-            </Grid>
-            <Grid item xs={6}>
               <Item elevation={10} id="item_4">
-                <div style={{color: 'white'}}>
-                <h3>Skillset</h3>
-                <p>Standy by</p>
-                </div>
+                <Grid container spacing={2}>
+                  <Grid item xs={2}>
+                    {avatarSelector("rag")}
+                  </Grid>
+                  <Grid item xs={10}>
+                    <div style={{color: 'white', fontFamily: 'avenir'}}>
+                      <h2>Generative AI | Multimodal RAGs</h2>
+                      <p>To be added</p>
+                    </div>
+                  </Grid>
+                </Grid>
               </Item>
             </Grid>
           </Grid>

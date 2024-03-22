@@ -13,10 +13,39 @@ function getStyle(){
     return {display: 'block', marginLeft: 'auto', marginRight: 'auto', width: '90%'}
 }
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <img src={'../static/images/cover.jpeg'} alt="Logo" style={getStyle()}/>;
+    <img src={'../static/images/work.jpg'} alt="Logo" style={{
+      ...getStyle(),
+      width: window.screen.width,
+      position: 'absolute',
+      top: '150%',
+      left: '0'
+    }}/>;
+    <img src={'../static/images/education.jpg'} alt="Logo" style={{
+      ...getStyle(),
+      width: window.screen.width,
+      position: 'absolute',
+      top: '250%',
+      left: '0'
+    }}/>;
+    <img src={'../static/images/projects.jpg'} alt="Logo" style={{
+      ...getStyle(),
+      width: window.screen.width,
+      position: 'absolute',
+      top: '350%',
+      left: '0'
+    }}/>;
+    <img src={'../static/images/skillset.jpg'} alt="Logo" style={{
+      ...getStyle(),
+      width: window.screen.width,
+      position: 'absolute',
+      top: '450%',
+      left: '0'
+    }}/>;
     <App />
   </React.StrictMode>
 );
