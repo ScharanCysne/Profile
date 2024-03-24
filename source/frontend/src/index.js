@@ -17,25 +17,19 @@ function getStyle(){
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <img src={'../static/images/cover.jpeg'} alt="Logo" style={getStyle()}/>;
-    <img src={'../static/images/work.jpg'} alt="Logo" style={{
+    <img src={'../static/images/cover.jpg'} alt="Logo" style={getStyle()}/>
+    <img src={'../static/images/work2.jpg'} alt="Logo" style={{
       ...getStyle(),
       position: 'absolute',
-      top: '150%',
+      top: '100%',
       left: '0'
-    }}/>;
+    }}/>
     <img src={'../static/images/projects.jpg'} alt="Logo" style={{
       ...getStyle(),
       position: 'absolute',
-      top: '250%',
+      top: '200%',
       left: '0'
-    }}/>;
-    <img src={'../static/images/skillset.jpg'} alt="Logo" style={{
-      ...getStyle(),
-      position: 'absolute',
-      top: '350%',
-      left: '0'
-    }}/>;
+    }}/>
     <App />
   </React.StrictMode>
 );

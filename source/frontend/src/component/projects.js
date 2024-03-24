@@ -5,13 +5,12 @@ import Entry from './entry';
 class Projects extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
   }
 
   render() {
       return (
         <div>
-          <Grid container spacing={0} style={{position: 'absolute', top: '250%', left: '4em'}}>
+          <Grid container spacing={0} style={{position: this.props.position_type, top: this.props.position, left: '4em'}}>
             <Grid item xs={6}>
               <div style={{color: 'white', fontFamily: 'avenir', textAlign: 'left'}}>
                 <h2>
@@ -22,7 +21,6 @@ class Projects extends Component {
               </div>
               <Entry title={"Multi-Purpose Autonomous Drone Network"} avatar={"boat"} entryId={"project_item"}/>
               <Entry title={"Generative AI Village"} avatar={"intelligence"} entryId={"project_item"}/>
-              <Entry title={"RL Autonomous Trader"} avatar={"rag"} entryId={"project_item"}/>
               <div style={{color: 'white', fontFamily: 'avenir', textAlign: 'left'}}>
                 <h2>
                   <text style={{

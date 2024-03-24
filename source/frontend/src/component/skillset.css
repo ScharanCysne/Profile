@@ -1,7 +1,9 @@
 #item_a {
-    border-radius: 50%;
-    height: 10em;
-    width: 10em;
+    border: solid #111317;
+    border-radius: 0%;
+    height: 3em;
+    width: 15em;
+    text-align: left;
     -webkit-transition: all .5s;
     -moz-transition: all .5s;
     transition: all .5s;
@@ -10,6 +12,4 @@
 #item_a:hover {
     border: solid #FFA800;
     border-radius: 4px;
-    height: 10em;
-    width: 10em;
 }

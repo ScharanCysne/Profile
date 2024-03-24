@@ -1,20 +1,32 @@
 import './App.css'
 
+import { useRef } from 'react';
+
 import Curriculum from './component/curriculum';
-import FloatingButton from './component/FloatingButton';
 import Projects from './component/projects';
-import Skillset from './component/skillset';
 import SubHeader from './component/subheader';
 
+import IconButton from '@mui/material/IconButton';
+import FloatingButton from './component/FloatingButton';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import ChatButton from './component/chatButton';
+
 function App() {
+  const myRef = useRef(null);
+  const executeScroll = () => myRef.current.scrollIntoView();
+
   return (
-    <div className="App" style={{ marginLeft: '5%', marginRight: '5%', display: 'block'}}>
-      <p style={{textAlign: 'center'}}><i class="arrow down"></i></p>
+    <div className="App" style={{marginLeft: '5%', marginRight: '5%', display: 'block'}}>
+      <SubHeader position='25%' position_type='absolute'/>
+      <div style={{textAlign: 'center', position: 'relative', top: '-4em'}}>
+        <IconButton onClick={executeScroll} aria-label="delete" size="large">
+          <ArrowBackIosIcon className="arrow down" fontSize="inherit"/>
+        </IconButton>
+      </div>
+      <div ref={myRef} style={{position: 'relative', top: '-3em'}}/>
       <div>
-        <SubHeader/>
-        <Skillset />
-        <Curriculum/>
-        <Projects/>
+        <Curriculum position='110%' position_type='absolute'/>
+        <Projects position='200%' position_type='absolute'/>
       </div>
       <FloatingButton/>
     </div>

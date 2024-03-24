@@ -1,7 +1,7 @@
 
 
 
-import './entry.css';
+import './ChatHistory.css';
 
 import React, { Component } from "react";
 
@@ -9,7 +9,6 @@ import { Avatar } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import { styled } from '@mui/material/styles';
-import Chip from '@mui/material/Chip';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: '#111317',
@@ -27,14 +26,14 @@ function avatarSelector(type){
       style={{
         display: 'block',
         margin: 'auto',
-        width: '5em',
-        height: '5em',
+        width: '2em',
+        height: '2em',
       }}
     />
   )
 }
 
-class Entry extends Component {
+class ChatHistory extends Component {
   constructor(props) {
     super(props);
   }
@@ -42,41 +41,31 @@ class Entry extends Component {
   getTitle(){
     if (this.props.subtitle)
         return (
-            <h3>{this.props.title} | <i>{this.props.subtitle}</i></h3>
+            <h2>{this.props.title} | <i>{this.props.subtitle}</i></h2>
         )
     else
         return (
-            <h3>{this.props.title}</h3>
+            <h2>{this.props.title}</h2>
         )
   }
 
   render() {
       return (
-        <Item elevation={10} id={this.props.entryId}>
-            {/* <Grid container spacing={2}> */}
-                {/* <Grid item xs={2}> */}
-                    {/* {avatarSelector(this.props.avatar)} */}
-                {/* </Grid> */}
-                {/* <Grid item xs={10}> */}
+        <Item elevation={10} id={this.props.ChatHistoryId}>
+            <Grid container spacing={2}>
+                <Grid item xs={2}>
+                    {avatarSelector(this.props.avatar)}
+                </Grid>
+                <Grid item xs={10}>
                     <div style={{color: 'white', fontFamily: 'avenir'}}>
                         {this.getTitle()}
                         <div/>
-
-                        <Chip
-                          label="python"
-                          variant="outlined"
-                          style={{
-                            color:"#FFA800",
-                            border: "solid #FFA800",
-                            borderWidth: "1px"
-                          }}
-                        />
                     </div>
-                {/* </Grid> */}
-            {/* </Grid> */}
+                </Grid>
+            </Grid>
         </Item>
       );
   }
 }
 
-export default Entry
+export default ChatHistory

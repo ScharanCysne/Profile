@@ -31,43 +31,33 @@ function avatarSelector(type){
 }
 
 class Skillset extends Component {
+    constructor(props){
+        super(props)
+    }
+
   render() {
       return (
-        <div>
-          <Grid container spacing={2} style={{position: 'absolute', top: '400%', left: 'auto'}}>
-            <Grid item xs={3}>
-                <Item elevation={10} id="item_a">
-                    <div style={{color: 'white', fontFamily: 'avenir', textAlign: 'center'}}>
-                        {avatarSelector("intelligence")}
-                        Software<br/>Engineering
-                    </div>
-                </Item>
-            </Grid>
-            <Grid item xs={3}>
-                <Item elevation={10} id="item_a">
-                    <div style={{color: 'white', fontFamily: 'avenir', textAlign: 'center'}}>
-                        {avatarSelector("intelligence")}
-                        Machine<br/>Learning
-                    </div>
-                </Item>
-            </Grid>
-            <Grid item xs={3}>
-                <Item elevation={10} id="item_a">
-                    <div style={{color: 'white', fontFamily: 'avenir', textAlign: 'center'}}>
-                        {avatarSelector("intelligence")}
-                        Data<br/>Science
-                    </div>
-                </Item>
-            </Grid>
-            <Grid item xs={3}>
-                <Item elevation={10} id="item_a">
-                    <div style={{color: 'white', fontFamily: 'avenir', textAlign: 'center'}}>
-                        {avatarSelector("intelligence")}
-                        Data<br/>Engineering
-                    </div>
-                </Item>
-            </Grid>
-          </Grid>
+        <div >
+          <Item elevation={10} id="item_a">
+              <div style={{color: 'white', fontFamily: 'avenir'}}>
+                  <h3>Software Engineering</h3>
+              </div>
+          </Item>
+          <Item elevation={10} id="item_a">
+              <div style={{color: 'white', fontFamily: 'avenir'}}>
+                  <h3>Machine Learning</h3>
+              </div>
+          </Item>
+          <Item elevation={10} id="item_a">
+              <div style={{color: 'white', fontFamily: 'avenir'}}>
+                  <h3>Data Science</h3>
+              </div>
+          </Item>
+          <Item elevation={10} id="item_a">
+              <div style={{color: 'white', fontFamily: 'avenir'}}>
+                  <h3>Data Engineering</h3>
+              </div>
+          </Item>
         </div>
       );
   }
