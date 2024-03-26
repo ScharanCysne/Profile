@@ -1,15 +1,14 @@
-#curriculum_item {
+#entry {
     /* position: relative;
     left:0px; */
     height: 4em;
-    width: 90%;
     border-radius: 7px;
-    -webkit-transition: all 1s;
-    -moz-transition: all 1s;
-    transition: all 1s;
+    -webkit-transition: all .7s;
+    -moz-transition: all .7s;
+    transition: all .7s;
 }
 
-#curriculum_item:hover {
+#entry:hover {
     /* position: relative; */
     /* width: 140%; */
     height: 20em;
@@ -18,17 +17,21 @@
     /* background-color: whitesmoke; */
 }
 
-#project_item {
-    height: 4em;
-    width: 90%;
-    border-radius: 7px;
-    -webkit-transition: all 1s;
-    -moz-transition: all 1s;
-    transition: all 1s;
+#entry:hover .overlay{
+    height: 10em;
 }
 
-#project_item:hover {
-    height: 20em;
-    border: solid #FFA800;
-    /* background-color: whitesmoke; */
+.overlay {
+    position: relative;
+    bottom: 0;
+    height: 0;
+    overflow: hidden;
+    background-color: #111317;
+    transition: .5s ease;
+}
+
+.text {
+    overflow: hidden;
+    color: white;
+    font-family: Avenir;
 }

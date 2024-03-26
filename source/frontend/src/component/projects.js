@@ -2,6 +2,36 @@ import React, { Component } from "react";
 import Grid from '@mui/material/Grid';
 import Entry from './entry';
 
+const opensource = [
+  {
+    title: "Multi-Purpose Autonomous Drone Network",
+    subtitle: "",
+    avatar: "intelligence",
+    description: "Description"
+  },
+  {
+    title: "Generative AI Village",
+    subtitle: "",
+    avatar: "intelligence",
+    description: "Description"
+  },
+]
+
+const research = [
+  {
+    title: "ECHOS",
+    subtitle: "Efficient CHatbot OS",
+    avatar: "intelligence",
+    description: "Description"
+  },
+  {
+    title: "ITAndroids' Robotics Lab",
+    subtitle: "",
+    avatar: "intelligence",
+    description: "Description"
+  },
+]
+
 class Projects extends Component {
   constructor(props) {
     super(props);
@@ -10,7 +40,14 @@ class Projects extends Component {
   render() {
       return (
         <div>
-          <Grid container spacing={0} style={{position: this.props.position_type, top: this.props.position, left: '4em'}}>
+          <Grid
+            container
+            spacing={2}
+            style={{
+              position: this.props.position_type,
+              top: this.props.position,
+              paddingLeft: '5%',
+            }}>
             <Grid item xs={6}>
               <div style={{color: 'white', fontFamily: 'avenir', textAlign: 'left'}}>
                 <h2>
@@ -19,8 +56,18 @@ class Projects extends Component {
                   <text> Projects</text>
                 </h2>
               </div>
-              <Entry title={"Multi-Purpose Autonomous Drone Network"} avatar={"boat"} entryId={"project_item"}/>
-              <Entry title={"Generative AI Village"} avatar={"intelligence"} entryId={"project_item"}/>
+              {
+                opensource.map(
+                  (entry) => (
+                    <Entry
+                      title={entry.title}
+                      subtitle={entry.subtitle}
+                      avatar={entry.avatar}
+                      description={entry.description}
+                    />
+                  )
+                )
+              }
               <div style={{color: 'white', fontFamily: 'avenir', textAlign: 'left'}}>
                 <h2>
                   <text style={{
@@ -34,8 +81,18 @@ class Projects extends Component {
                   <text> Projects</text>
                 </h2>
               </div>
-              <Entry title={"ECHOS"} subtitle={"Efficient CHatbot OS"} avatar={"rag"} entryId={"project_item"}/>
-              <Entry title={"ITAndroids' Robotics Lab"} avatar={"rag"} entryId={"project_item"}/>
+              {
+                research.map(
+                  (entry) => (
+                    <Entry
+                      title={entry.title}
+                      subtitle={entry.subtitle}
+                      avatar={entry.avatar}
+                      description={entry.description}
+                    />
+                  )
+                )
+              }
             </Grid>
             <Grid item xs={6}>
               {/* Projects & Research */}

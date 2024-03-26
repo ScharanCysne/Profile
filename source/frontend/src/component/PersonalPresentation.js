@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 
-import Avatar from '@mui/material/Avatar';
-import Divider from '@mui/material/Divider';
+import { Avatar, Divider } from '@mui/material';
 
-class SubHeader extends Component {
+class PersonalPresentation extends Component {
   constructor(props){
     super(props)
   }
+
   render() {
     return (
       <div style={{
@@ -63,4 +63,4 @@ class SubHeader extends Component {
   }
 }
 
-export default SubHeader
+export default PersonalPresentation

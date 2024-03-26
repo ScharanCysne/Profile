@@ -3,27 +3,24 @@ import './fab.css'
 import * as React from 'react';
 
 import { SpeedDial, SpeedDialAction, SpeedDialIcon } from '@mui/material';
-import FileCopyIcon from '@mui/icons-material/FileCopyOutlined';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import EmailIcon from '@mui/icons-material/Email';
+import { EmailIcon, FileCopyIcon, GitHubIcon, LinkedInIcon } from '@mui/icons-material';
 
 import CV from './../../../static/data/CV - Nicholas Scharan Cysne.pdf'
 
-export const openInNewTab = (url) => {
+const actions = [
+    { icon: <FileCopyIcon />, name: 'Resume', url: CV },
+    { icon: <GitHubIcon />, name: 'Github', url: 'https://github.com/ScharanCysne' },
+    { icon: <LinkedInIcon />, name: 'LinkedIn', url: 'https://www.linkedin.com/in/scharan-cysne/' },
+    { icon: <EmailIcon />, name: 'Email', url: 'mailto:nicholas.s.cysne@gmail.com' },
+  ];
+
+const openInNewTab = (url) => {
     console.log(url)
     const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
     if (newWindow) newWindow.opener = null
   }
 
-export const onClickUrl = (url) => openInNewTab(url);
-
-const actions = [
-  { icon: <FileCopyIcon />, name: 'Resume', url: CV },
-  { icon: <GitHubIcon />, name: 'Github', url: 'https://github.com/ScharanCysne' },
-  { icon: <LinkedInIcon />, name: 'LinkedIn', url: 'https://www.linkedin.com/in/scharan-cysne/' },
-  { icon: <EmailIcon />, name: 'Email', url: 'mailto:nicholas.s.cysne@gmail.com' },
-];
+const onClickUrl = (url) => openInNewTab(url);
 
 export default function FloatingButton() {
     return (

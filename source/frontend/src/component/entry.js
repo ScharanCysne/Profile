@@ -4,12 +4,8 @@
 import './entry.css';
 
 import React, { Component } from "react";
-
-import { Avatar } from '@mui/material';
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
+import { Avatar, Chip, Paper } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import Chip from '@mui/material/Chip';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: '#111317',
@@ -36,27 +32,28 @@ function avatarSelector(type){
 class Entry extends Component {
   constructor(props) {
     super(props);
-  }
 
-  getTitle(){
     if (this.props.subtitle)
-        return (
-            <h3 >{this.props.title} | <i>{this.props.subtitle}</i></h3>
-        )
+      this.state = {
+        title: (<h3>{this.props.title} | <i>{this.props.subtitle}</i></h3>)
+      }
     else
-        return (
-            <h3>{this.props.title}</h3>
-        )
+      this.state = {
+        title: (<h3>{this.props.title}</h3>)
+      }
   }
 
   render() {
       return (
-        <Item elevation={10} id={this.props.entryId}>
-          <div style={{color: 'white', fontFamily: 'avenir'}}>
-              {this.getTitle()}
-              <div/>
-
-              {/* <Chip
+        <Item elevation={10} id='entry'>
+          <div style={{color: 'white', fontFamily: 'avenir', margin: '10px'}}>
+            {this.state.title}
+          </div>
+          <div className="overlay">
+            <div className='text'>
+              {this.props.description}
+            </div>
+            <Chip
                 label="python"
                 variant="outlined"
                 style={{
@@ -64,7 +61,7 @@ class Entry extends Component {
                   border: "solid #FFA800",
                   borderWidth: "1px"
                 }}
-              /> */}
+              />
           </div>
         </Item>
       );

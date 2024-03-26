@@ -4,10 +4,10 @@ import React, { useRef } from 'react';
 
 import Curriculum from './component/curriculum';
 import Projects from './component/projects';
-import SubHeader from './component/subheader';
+import PersonalPresentation from './component/PersonalPresentation';
+import FloatingButton from './component/FloatingButton';
 
 import IconButton from '@mui/material/IconButton';
-import FloatingButton from './component/FloatingButton';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 
 function getStyle(){
@@ -17,17 +17,30 @@ function getStyle(){
     return {display: 'block', marginLeft: 'auto', marginRight: 'auto', width: '90%'}
 }
 
-function App() {
+function Cover(){
   const myRef = useRef(null);
   const executeScroll = () => myRef.current.scrollIntoView();
-  const [scrollYPosition, setScrollYPosition] = React.useState(0);
+
+  return (
+    <div style={{marginLeft: '5%', marginRight: '5%', display: 'block'}}>
+      <PersonalPresentation position='25%' position_type='absolute'/>
+      <div style={{textAlign: 'center', position: 'relative', top: '-4em'}}>
+        <IconButton onClick={executeScroll} aria-label="delete" size="large">
+          <ArrowBackIosIcon className="arrow down" fontSize="inherit"/>
+        </IconButton>
+      </div>
+      <div ref={myRef} style={{position: 'relative', top: '-3em'}}/>
+    </div>
+  )
+}
+
+function App() {
   const [workEnabled, setWorkEnabled] = React.useState(false);
   const [projectEnabled, setProjectEnabled] = React.useState(false);
+  const [scrollYPosition, setScrollYPosition] = React.useState(0);
 
   const handleScroll = () => {
-      setScrollYPosition(window.scrollY);
-
-
+    setScrollYPosition(window.scrollY);
   };
 
   React.useEffect(() => {
@@ -45,16 +58,10 @@ function App() {
     setProjectEnabled(true)
 
   return (
-    <div className="App" style={{marginLeft: '5%', marginRight: '5%', display: 'block'}}>
-      <SubHeader position='25%' position_type='absolute'/>
-      <div style={{textAlign: 'center', position: 'relative', top: '-4em'}}>
-        <IconButton onClick={executeScroll} aria-label="delete" size="large">
-          <ArrowBackIosIcon className="arrow down" fontSize="inherit"/>
-        </IconButton>
-      </div>
-      <div ref={myRef} style={{position: 'relative', top: '-3em'}}/>
+    <div className="App">
+      <Cover/>
       <div>
-        <Curriculum position='110%' position_type='relative'/>
+        <Curriculum position='120%' position_type='absolute'/>
         <Projects position='210%' position_type='absolute'/>
       </div>
       <FloatingButton/>
