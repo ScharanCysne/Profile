@@ -17,8 +17,10 @@ function getStyle(){
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <img src={'../static/images/cover.jpg'} alt="Logo" style={getStyle()}/>
-    <img src={'../static/images/work2.jpg'} alt="Logo" style={{
+    <img src={'../static/images/cover.jpg'} alt="Logo" style={{
+      ...getStyle()
+    }}/>
+    <img src={'../static/images/work.jpg'} alt="Logo" style={{
       ...getStyle(),
       position: 'absolute',
       top: '100%',

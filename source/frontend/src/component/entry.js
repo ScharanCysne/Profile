@@ -16,7 +16,6 @@ const Item = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(1),
   textAlign: 'left',
   marginBottom: '1em',
-  ...theme.typography.body2,
 }));
 
 function avatarSelector(type){
@@ -42,7 +41,7 @@ class Entry extends Component {
   getTitle(){
     if (this.props.subtitle)
         return (
-            <h3>{this.props.title} | <i>{this.props.subtitle}</i></h3>
+            <h3 >{this.props.title} | <i>{this.props.subtitle}</i></h3>
         )
     else
         return (
@@ -53,27 +52,20 @@ class Entry extends Component {
   render() {
       return (
         <Item elevation={10} id={this.props.entryId}>
-            {/* <Grid container spacing={2}> */}
-                {/* <Grid item xs={2}> */}
-                    {/* {avatarSelector(this.props.avatar)} */}
-                {/* </Grid> */}
-                {/* <Grid item xs={10}> */}
-                    <div style={{color: 'white', fontFamily: 'avenir'}}>
-                        {this.getTitle()}
-                        <div/>
+          <div style={{color: 'white', fontFamily: 'avenir'}}>
+              {this.getTitle()}
+              <div/>
 
-                        <Chip
-                          label="python"
-                          variant="outlined"
-                          style={{
-                            color:"#FFA800",
-                            border: "solid #FFA800",
-                            borderWidth: "1px"
-                          }}
-                        />
-                    </div>
-                {/* </Grid> */}
-            {/* </Grid> */}
+              {/* <Chip
+                label="python"
+                variant="outlined"
+                style={{
+                  color:"#FFA800",
+                  border: "solid #FFA800",
+                  borderWidth: "1px"
+                }}
+              /> */}
+          </div>
         </Item>
       );
   }

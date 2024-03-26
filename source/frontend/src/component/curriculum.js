@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Grid from '@mui/material/Grid';
 import Entry from './entry';
+import ChatHistory from "./chatHistory";
 
 class Curriculum extends Component {
   constructor(props){
@@ -9,7 +10,7 @@ class Curriculum extends Component {
   render() {
       return (
         <div>
-          <Grid container spacing={0} style={{position: this.props.position_type, top: this.props.position, right: '2em'}}>
+          <Grid container spacing={2} style={{position: this.props.position_type, top: this.props.position}}>
             <Grid item xs={6}>
               {/* Work Experience */}
             </Grid>

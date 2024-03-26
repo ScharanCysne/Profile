@@ -8,6 +8,8 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
 
+import CV from './../../../static/data/CV - Nicholas Scharan Cysne.pdf'
+
 export const openInNewTab = (url) => {
     console.log(url)
     const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
@@ -17,7 +19,7 @@ export const openInNewTab = (url) => {
 export const onClickUrl = (url) => openInNewTab(url);
 
 const actions = [
-  { icon: <FileCopyIcon />, name: 'Resume', url: 'http://127.0.0.1:8000/' },
+  { icon: <FileCopyIcon />, name: 'Resume', url: CV },
   { icon: <GitHubIcon />, name: 'Github', url: 'https://github.com/ScharanCysne' },
   { icon: <LinkedInIcon />, name: 'LinkedIn', url: 'https://www.linkedin.com/in/scharan-cysne/' },
   { icon: <EmailIcon />, name: 'Email', url: 'mailto:nicholas.s.cysne@gmail.com' },

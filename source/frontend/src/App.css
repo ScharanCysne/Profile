@@ -11,3 +11,12 @@
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
 }
+
+.smooth {
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+    -webkit-transition-delay: .5s;
+    -moz-transition-delay: .5s;
+    transition-delay: .5s;
+}

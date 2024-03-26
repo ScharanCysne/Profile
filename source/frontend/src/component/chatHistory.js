@@ -1,7 +1,6 @@
 
 
 
-import './ChatHistory.css';
 
 import React, { Component } from "react";
 
@@ -52,17 +51,10 @@ class ChatHistory extends Component {
   render() {
       return (
         <Item elevation={10} id={this.props.ChatHistoryId}>
-            <Grid container spacing={2}>
-                <Grid item xs={2}>
-                    {avatarSelector(this.props.avatar)}
-                </Grid>
-                <Grid item xs={10}>
-                    <div style={{color: 'white', fontFamily: 'avenir'}}>
-                        {this.getTitle()}
-                        <div/>
-                    </div>
-                </Grid>
-            </Grid>
+            <div style={{color: 'white', fontFamily: 'avenir'}}>
+                {this.getTitle()}
+                <div/>
+            </div>
         </Item>
       );
   }
